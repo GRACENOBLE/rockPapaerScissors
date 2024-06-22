@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="grid place-items-center bg-blue-900 h-screen">
+    <div class="w-[700px] flex flex-col items-center pt-16">
+      <div
+        class="border rounded border-white flex justify-between min-w-[400px] p-2 w-96"
+      >
+        <h1 class="text-white w-16 text-xs">ROCK PAPER SCISSORS</h1>
+        <div
+          class="px-4 bg-white rounded flex flex-col items-center justify-center text-xs font-extralight"
+        >
+          score <span class="text-base font-normal" id="scoreCount">12</span>
+        </div>
+      </div>
+
+
+      <!--Game screen--> 
+      <div class="my-20 flex flex-col items-center">
+      <div class="flex gap-20 ">
+        <button
+        class="bg-blue-400 w-20 h-20 rounded-full grid place-items-center choice" id="paper"
+      >
+        <span
+          class="bg-white w-16 h-16 rounded-full grid place-items-center"
+        ><img src="/icons/paper.png" alt=""></span>
+        </button
+      >
+      <button
+        class="bg-orange-400 w-20 h-20 rounded-full grid place-items-center choice" id="scissors"
+      >
+        <span
+          class="bg-white w-16 h-16 rounded-full grid place-items-center"
+        ><img src="/icons/scissors.png" alt=""></span></span></button
+      ></div>
+      <button
+        class="bg-red-400 w-20 h-20 rounded-full grid place-items-center choice" id="rock"
+      >
+        <span
+          class="bg-white w-16 h-16 rounded-full grid place-items-center"
+        ><img src="/icons/rock.png" alt=""></span></span>
+      </button></div>
+
+
+
+
+
+<!--Result screen-->
+      <div class="flex items-end gap-10 "><div class="text-white"><div class="my-10 uppercase">Player one picked</div><button
+        class="bg-blue-400 w-32 h-32 rounded-full grid place-items-center"
+      >
+        <span
+          class="bg-white w-28 h-28 rounded-full grid place-items-center"
+        ><img src="/icons/paper.png" alt=""></span></span>
+      </button></div>
+      <div class="mb-10"><h2 class="text-white text-2xl">YOU WIN</h2><button class="bg-white text-sm px-4 py-1 rounded">PLAY AGAIN</button></div>
+      <div class="text-white"> <div class="py-10 uppercase">Player two picked</div><button
+        class="bg-red-400 w-32 h-32 rounded-full grid place-items-center"
+      >
+        <span
+          class="bg-white w-28 h-28 rounded-full grid place-items-center"
+        ><img src="/icons/rock.png" alt=""></span></span>
+      </button></div></div>
+      <button
+        class="px-4 absolute right-20 bottom-20 py-1 border border-white rounded text-white"
+      >
+        RULES
+      </button>
+    </div>
+
+    <script src="func.js"></script>
+  </body>
+</html>
