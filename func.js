@@ -1,52 +1,74 @@
 const scoreCount = document.querySelector("#scoreCount");
-const paperBtn = document.querySelector("#paper")
+const paperBtn = document.querySelector("#paper");
 const scissorBtn = document.querySelector("#scissors");
 const rockBtn = document.querySelector("#rock");
+const result = document.querySelector("#result");
+const game = document.querySelector('#game')
+const playAgain = document.querySelector("#playAgain");
+const outcome = document.querySelector('#outcome')
 
+let count = 1;
+scoreCount.innerHTML = count;
 
-//const user_choices = document.querySelectorAll(".choice");
+function showresult() {
+  result.style.display = "flex";
+  game.style.display = "none";
+}
 
-// console.log(user_choices);
-
-scoreCount.innerHTML = 0;
+function hideresult() {
+  result.style.display = "none";
+  game.style.display = "flex";
+}
 
 const possibilities = ["rock", "paper", "scissor"];
 let userChoice = "";
-let botChoice = ""
+let botChoice = "";
 
-function returnWinner(userChoice){
-    botChoice = possibilities[Math.floor(Math.random() * possibilities.length)]
-    console.log(`User:${userChoice}<<<<<>>>>>Bot: ${botChoice}`);
+function returnWinner(userChoice) {
+  botChoice = possibilities[Math.floor(Math.random() * possibilities.length)];
+  console.log(`User:${userChoice}<<<<<>>>>>Bot: ${botChoice}`);
 
-    if(userChoice == botChoice){
-        console.log("Draw");
-    }else if(userChoice == "paper"){
-        if(botChoice == "rock"){
-            console.log("win");
-        }else{
-            console.log("lose");
-        }
-    }else if(userChoice == "rock"){
-        if (botChoice == "scissor") {
-          console.log("win");
-        } else {
-          console.log("lose");
-        }
-    }else{
-        if (botChoice == "paper") {
-          console.log("win");
-        } else {
-          console.log("lose")
+  if (userChoice == botChoice) {
+    console.log("Draw");
+  } else if (userChoice == "paper") {
+    if (botChoice == "rock") {
+      console.log("win");
+      count++;
+      outcome.innerHTML = "You Won"
+      scoreCount.innerHTML = count;
+    } else {
+      outcome.innerHTML = "You Lost";
+      console.log("lose");
     }
-}
+  } else if (userChoice == "rock") {
+    if (botChoice == "scissor") {
+      console.log("win");
+      count++;
+      outcome.innerHTML = "You Won";
+      scoreCount.innerHTML = count;
+    } else {
+      outcome.innerHTML = "You Lost";
+      console.log("lose");
+    }
+  } else {
+    if (botChoice == "paper") {
+      console.log("win");
+      count++;
+      outcome.innerHTML = "You Won";
+      scoreCount.innerHTML = count;
+    } else {
+      outcome.innerHTML = "You Lost";
+      console.log("lose");
+    }
+  }
+  showresult()
 }
 
 //noble
 paperBtn.addEventListener("click", () => {
-    userChoice = "paper"
-    returnWinner(userChoice);
-
-})
+  userChoice = "paper";
+  returnWinner(userChoice);
+});
 rockBtn.addEventListener("click", () => {
   userChoice = "rock";
   returnWinner(userChoice);
@@ -56,71 +78,6 @@ scissorBtn.addEventListener("click", () => {
   returnWinner(userChoice);
 });
 
-
-
-
-
-
-// This is Shafic
-
-// const weapons = {
-//     rock: {
-//         wins: "scissors"
-//     },
-//     scissors: {
-//         wins: "paper"
-//     },
-//     paper: {
-//         wins: "rock"
-//     }
-// }
-
-
-// user_choices.forEach((choiceBtn) => {
-//   choiceBtn.addEventListener("click", (event) => {
-
-//     let possibilities = Object.keys(weapons);
-//     userChoice = choiceBtn.id;
-//     botChoice = possibilities[Math.floor(Math.random() * possibilities.length)];
-
-
-//     if(userChoice === botChoice){
-//         console.log ("this is draw ", `BOT: ${botChoice} -`, `- PLAYER: ${userChoice}` )
-        
-//     }else if(weapons[userChoice].wins == botChoice){
-//         console.log("YOU WON", `BOT: ${botChoice} -`, `- PLAYER: ${userChoice}`)
-//     }else{
-//         console.log(
-//           "YOU LOST",
-//           `BOT: ${botChoice} -`,
-//           `- PLAYER: ${userChoice}`
-//         );
-//     }
-
-
-//   });
-// });
-
-// SIR MARTIN ---
-// paperBtn.addEventListener("click", () => {
-//   console.log("USER: paper");
-//   let botChoice = possibilities[Math.floor(Math.random() * possibilities.length)];
-//   console.log(botChoice);
-
-//   if(){
-
-//   }
-
-// });
-
-// scissorsBtn.addEventListener("click", () => {
-//   console.log("USER: scissor");
-//   let botChoice = Math.floor(Math.random() * possibilities.length);
-//   console.log(possibilities[botChoice]);
-// });
-
-// rockBtn.addEventListener("click", () => {
-//   console.log("USER: rock");
-//   let botChoice = Math.floor(Math.random() * possibilities.length);
-//   console.log(possibilities[botChoice]);
-// });
+playAgain.addEventListener("click", () => {
+  hideresult();
+});
