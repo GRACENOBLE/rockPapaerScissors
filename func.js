@@ -33,19 +33,19 @@ function returnWinner(userChoice) {
   if(userChoice == "rock"){
     UserChoice.innerHTML = `<button class="bg-red-400 w-32 h-32 rounded-full grid place-items-center">
         <span class="bg-white w-28 h-28 rounded-full grid place-items-center">
-          <img src="/icons/rock.png" alt="" />
+          <img src="./icons/rock.png" alt="" />
         </span>
       </button>`;
   }else if(userChoice == "paper"){
     UserChoice.innerHTML = `<button class="bg-blue-400 w-32 h-32 rounded-full grid place-items-center">
         <span class="bg-white w-28 h-28 rounded-full grid place-items-center">
-          <img src="/icons/paper.png" alt="" />
+          <img src="./icons/paper.png" alt="" />
         </span>
       </button>`;
   }else{
     UserChoice.innerHTML = `<button class="bg-orange-400 w-32 h-32 rounded-full grid place-items-center">
         <span class="bg-white w-28 h-28 rounded-full grid place-items-center">
-          <img src="/icons/scissors.png" alt="" />
+          <img src="./icons/scissors.png" alt="" />
         </span>
       </button>`;
   }
@@ -53,19 +53,19 @@ function returnWinner(userChoice) {
   if (botChoice == "rock") {
     BotChoice.innerHTML = `<button class="bg-red-400 w-32 h-32 rounded-full grid place-items-center">
         <span class="bg-white w-28 h-28 rounded-full grid place-items-center">
-          <img src="/icons/rock.png" alt="" />
+          <img src="./icons/rock.png" alt="" />
         </span>
       </button>`;
   } else if (botChoice == "paper") {
     BotChoice.innerHTML = `<button class="bg-blue-400 w-32 h-32 rounded-full grid place-items-center">
         <span class="bg-white w-28 h-28 rounded-full grid place-items-center">
-          <img src="/icons/paper.png" alt="" />
+          <img src="./icons/paper.png" alt="" />
         </span>
       </button>`;
   } else {
     BotChoice.innerHTML = `<button class="bg-orange-400 w-32 h-32 rounded-full grid place-items-center">
         <span class="bg-white w-28 h-28 rounded-full grid place-items-center">
-          <img src="/icons/scissors.png" alt="" />
+          <img src="./icons/scissors.png" alt="" />
         </span>
       </button>`;
   }
