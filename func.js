@@ -5,70 +5,33 @@ const rockBtn = document.querySelector("#rock");
 
 
 const user_choices = document.querySelectorAll(".choice");
-//
+
 const resultScreen = document.querySelector(".result");
 const gameScreen = document.querySelector(".gameScreen");
 const resultMessage = document.querySelector(".resultMessage");
 const playAgain = document.querySelector(".playAgain");
 const userChoiceImg = document.querySelector(".userChoiceImg img");
 const botChoiceImg = document.querySelector(".botChoiceImg img");
+const userText = document.querySelector(".userText");
+const botText = document.querySelector(".botText");
 
-//
 
-// console.log(user_choices);
 
-// scoreCount.innerHTML = 0;
-
-// const possibilities = ["rock", "paper", "scissor"];
-// let userChoice = "";
-// let botChoice = ""
-
-// function returnWinner(userChoice){
-//     botChoice = possibilities[Math.floor(Math.random() * possibilities.length)]
-//     console.log(`User:${userChoice}<<<<<>>>>>Bot: ${botChoice}`);
-
-//     if(userChoice == botChoice){
-//         console.log("Draw");
-//     }else if(userChoice == "paper"){
-//         if(botChoice == "rock"){
-//             console.log("win");
-//         }else{
-//             console.log("lose");
-//         }
-//     }else if(userChoice == "rock"){
-//         if (botChoice == "scissor") {
-//           console.log("win");
-//         } else {
-//           console.log("lose");
-//         }
-//     }else{
-//         if (botChoice == "paper") {
-//           console.log("win");
-//         } else {
-//           console.log("lose")
-//     }
-// }
-// }
-
-// //noble
 paperBtn.addEventListener("click", () => {
     userChoiceImg.src = "/icons/paper.png";
+    userText.innerHTML = "PAPER"
 
 })
 rockBtn.addEventListener("click", () => {
   userChoiceImg.src = "/icons/rock.png";
-  botChoiceImg.src = "/icons/rock.png";
+  userText.innerHTML = "ROCK";
 });
 scissorBtn.addEventListener("click", () => {
   userChoiceImg.src = "/icons/scissors.png";
-});
+  userText.innerHTML = "SCISSORS"
+}); 
 
 
-
-
-
-
-// This is Shafic
 
 const weapons = {
     rock: {
@@ -101,10 +64,14 @@ user_choices.forEach((choiceBtn) => {
     //
 if(botChoice =="rock"){
   botChoiceImg.src = "/icons/rock.png";
+  botText.innerHTML = "ROCK"
+
 }else if(botChoice == "paper"){
   botChoiceImg.src = "/icons/paper.png";
+  botText.innerHTML = "PAPER"
 }else{
   botChoiceImg.src = "/icons/scissors.png";
+  botText.innerHTML = "SCISSORS"
 }
     //
 
