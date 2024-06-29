@@ -12,6 +12,9 @@ const rules = document.querySelector("#rules");
 const Rules = document.querySelector("#Rules");
 const Hiderules = document.querySelector("#hiderules");
 const houseCount = document.querySelector("#houseCount");
+const restart = document.querySelector("#restart");
+const overall = document.querySelector("#overall");
+const outcomebody = document.querySelector("#outcomebody");
 
 let count = 0;
 scoreCount.innerHTML = count;
@@ -112,9 +115,15 @@ function returnWinner(userChoice) {
   scoreCount.innerHTML = count;
   houseCount.innerHTML = loses;
   showresult();
+  if (count >= 3) {
+    outcomebody.innerHTML = `<div class="uppercase text-4xl font-bold text-green-400">You won!</div>`;
+    showoverall();
+  }else if(loses >=3){
+    outcomebody.innerHTML = `<div class="uppercase text-4xl font-bold text-red-600">you lost!</div>`;
+    showoverall();
+  }
 }
 
-//noble
 paperBtn.addEventListener("click", () => {
   userChoice = "paper";
   returnWinner(userChoice);
@@ -148,3 +157,15 @@ rules.addEventListener("click", () => {
 Hiderules.addEventListener("click", () => {
   hiderules();
 });
+
+restart.addEventListener("click", ()=>{
+  location.reload()
+})
+
+function showoverall() {
+  overall.style.display = "grid";
+}
+
+function hideoverall() {
+  overall.style.display = "none";
+}
