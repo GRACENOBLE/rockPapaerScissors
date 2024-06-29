@@ -12,16 +12,18 @@
           class="border rounded border-white flex justify-between min-w-[400px] p-2 w-96"
         >
           <h1 class="text-white w-16 text-xs">ROCK PAPER SCISSORS</h1>
-          <div class="flex gap-2"><div
-            class="px-4 bg-white rounded flex flex-col items-center justify-center text-xs font-extralight"
-          >
-            Score <span class="text-base font-normal" id="scoreCount"></span>
+          <div class="flex gap-2">
+            <div
+              class="px-4 bg-white rounded flex flex-col items-center justify-center text-xs font-extralight"
+            >
+              Score <span class="text-base font-normal" id="scoreCount"></span>
+            </div>
+            <div
+              class="px-4 bg-white rounded flex flex-col items-center justify-center text-xs font-extralight"
+            >
+              House <span class="text-base font-normal" id="houseCount"></span>
+            </div>
           </div>
-          <div
-            class="px-4 bg-white rounded flex flex-col items-center justify-center text-xs font-extralight"
-          >
-            House <span class="text-base font-normal" id="houseCount"></span>
-          </div></div>
         </div>
 
         <!--Game screen-->
@@ -115,6 +117,15 @@
       >
         RULES
       </button>
+    </div>
+    <!--Ultimate winner-->
+    <div
+      class="w-screen h-screen absolute z-20 top-0 left-0 backdrop-blur-md grid place-items-center"
+    >
+      <div class="w-96 h-96 border bg-white rounded-md flex flex-col">
+        <h2 class="text-center">Grand outcome</h2>
+        <div><button class="border">Restart</button></div>
+      </div>
     </div>
 
     <script src="func.js"></script>
