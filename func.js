@@ -8,12 +8,15 @@ const playAgain = document.querySelector("#playAgain");
 const outcome = document.querySelector("#outcome");
 const UserChoice = document.querySelector("#userChoice");
 const BotChoice = document.querySelector("#botChoice");
-const rules = document.querySelector("#rules")
-const Rules = document.querySelector("#Rules")
-const Hiderules = document.querySelector("#hiderules")
+const rules = document.querySelector("#rules");
+const Rules = document.querySelector("#Rules");
+const Hiderules = document.querySelector("#hiderules");
+const houseCount = document.querySelector("#houseCount");
 
 let count = 0;
 scoreCount.innerHTML = count;
+let loses = 0;
+houseCount.innerHTML = loses;
 
 function showresult() {
   result.style.display = "flex";
@@ -80,19 +83,18 @@ function returnWinner(userChoice) {
       console.log("win");
       count++;
       outcome.innerHTML = "You Won";
-
-      scoreCount.innerHTML = count;
     } else {
-      outcome.innerHTML = "You Lost";
       console.log("lose");
+      loses++;
+      outcome.innerHTML = "You Lost";
     }
   } else if (userChoice == "rock") {
     if (botChoice == "scissor") {
       console.log("win");
       count++;
       outcome.innerHTML = "You Won";
-      scoreCount.innerHTML = count;
     } else {
+      loses++;
       outcome.innerHTML = "You Lost";
       console.log("lose");
     }
@@ -101,12 +103,14 @@ function returnWinner(userChoice) {
       console.log("win");
       count++;
       outcome.innerHTML = "You Won";
-      scoreCount.innerHTML = count;
     } else {
+      loses++;
       outcome.innerHTML = "You Lost";
       console.log("lose");
     }
   }
+  scoreCount.innerHTML = count;
+  houseCount.innerHTML = loses;
   showresult();
 }
 
@@ -137,10 +141,10 @@ function hiderules() {
   Rules.style.display = "none";
 }
 
-rules.addEventListener("click", ()=>{
+rules.addEventListener("click", () => {
   showrules();
-})
+});
 
-Hiderules.addEventListener("click", ()=>{
-  hiderules()
-})
+Hiderules.addEventListener("click", () => {
+  hiderules();
+});
