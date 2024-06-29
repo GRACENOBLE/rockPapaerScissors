@@ -121,7 +121,7 @@ if(botChoice =="rock"){
     }else{
       resultMessage.innerHTML = "YOU LOST"
       count-=5;
-      console.log(count) 
+      console.log(count)
       scoreCount.innerHTML = count;
         console.log(
           "YOU LOST",
