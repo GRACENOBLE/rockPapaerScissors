@@ -57,13 +57,17 @@
       <div class="flex items-end gap-10 hidden" id="result">
         <div class="text-white">
           <div class="my-10 uppercase">You picked</div>
-          <div id="userChoice">
-            
-          </div>
+          <div id="userChoice"></div>
         </div>
         <div class="mb-10">
-          <h2 class="text-white text-2xl uppercase" id="outcome"></h2>
-          <button class="bg-white text-sm px-4 py-1 rounded mt-2" id="playAgain">
+          <h2
+            class="text-white text-2xl uppercase text-center"
+            id="outcome"
+          ></h2>
+          <button
+            class="bg-white text-sm px-4 py-1 rounded mt-2"
+            id="playAgain"
+          >
             PLAY AGAIN
           </button>
         </div>
@@ -72,8 +76,37 @@
           <div id="botChoice"></div>
         </div>
       </div>
+      <div
+        id="Rules"
+        class="hidden absolute w-screen h-screen flex justify-center items-center border top-0 left-0 backdrop-blur-md z-20"
+      >
+        <div
+          class="w-96 h-96 rounded-lg overflow-hidden bg-white text-center ps-2"
+        >
+          <div class="w-full h-full relative flex flex-col pt-10">
+            <h1 class="font-bold text-xl uppercase">Rules of the game</h1>
+            <br />
+            <span class="text-start ps-4 flex flex-col gap-2"
+              ><p>1. Pick your weapon</p>
+              <p>2. If you win your score incleases by one</p>
+              <p>3. If you lose the house gets the point</p>
+              <p>4. If its a draw, none gets the point</p>
+              <p>5. The first to 3 ultimately wins the game</p></span
+            >
+
+            <button
+              class="absolute bottom-4 right-4 border px-4 py-1 rounded-md border-black"
+              id="hiderules"
+            >
+              Done
+            </button>
+          </div>
+        </div>
+      </div>
+
       <button
         class="px-4 absolute right-20 bottom-20 py-1 border border-white rounded text-white"
+        id="rules"
       >
         RULES
       </button>

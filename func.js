@@ -8,7 +8,9 @@ const playAgain = document.querySelector("#playAgain");
 const outcome = document.querySelector("#outcome");
 const UserChoice = document.querySelector("#userChoice");
 const BotChoice = document.querySelector("#botChoice");
-
+const rules = document.querySelector("#rules")
+const Rules = document.querySelector("#Rules")
+const Hiderules = document.querySelector("#hiderules")
 
 let count = 0;
 scoreCount.innerHTML = count;
@@ -30,51 +32,50 @@ let botChoice = "";
 function returnWinner(userChoice) {
   botChoice = possibilities[Math.floor(Math.random() * possibilities.length)];
   console.log(`User:${userChoice}<<<<<>>>>>Bot: ${botChoice}`);
-  if(userChoice == "rock"){
-    UserChoice.innerHTML = `<button class="bg-red-400 w-32 h-32 rounded-full grid place-items-center">
+  if (userChoice == "rock") {
+    UserChoice.innerHTML = `<div class="bg-red-400 w-32 h-32 rounded-full grid place-items-center">
         <span class="bg-white w-28 h-28 rounded-full grid place-items-center">
           <img src="./icons/rock.png" alt="" />
         </span>
-      </button>`;
-  }else if(userChoice == "paper"){
-    UserChoice.innerHTML = `<button class="bg-blue-400 w-32 h-32 rounded-full grid place-items-center">
+      </div>`;
+  } else if (userChoice == "paper") {
+    UserChoice.innerHTML = `<div class="bg-blue-400 w-32 h-32 rounded-full grid place-items-center">
         <span class="bg-white w-28 h-28 rounded-full grid place-items-center">
           <img src="./icons/paper.png" alt="" />
         </span>
-      </button>`;
-  }else{
-    UserChoice.innerHTML = `<button class="bg-orange-400 w-32 h-32 rounded-full grid place-items-center">
+      </div>`;
+  } else {
+    UserChoice.innerHTML = `<div class="bg-orange-400 w-32 h-32 rounded-full grid place-items-center">
         <span class="bg-white w-28 h-28 rounded-full grid place-items-center">
           <img src="./icons/scissors.png" alt="" />
         </span>
-      </button>`;
+      </div>`;
   }
 
   if (botChoice == "rock") {
-    BotChoice.innerHTML = `<button class="bg-red-400 w-32 h-32 rounded-full grid place-items-center">
+    BotChoice.innerHTML = `<div class="bg-red-400 w-32 h-32 rounded-full grid place-items-center">
         <span class="bg-white w-28 h-28 rounded-full grid place-items-center">
           <img src="./icons/rock.png" alt="" />
         </span>
-      </button>`;
+      </div>`;
   } else if (botChoice == "paper") {
-    BotChoice.innerHTML = `<button class="bg-blue-400 w-32 h-32 rounded-full grid place-items-center">
+    BotChoice.innerHTML = `<div class="bg-blue-400 w-32 h-32 rounded-full grid place-items-center">
         <span class="bg-white w-28 h-28 rounded-full grid place-items-center">
           <img src="./icons/paper.png" alt="" />
         </span>
-      </button>`;
+      </div>`;
   } else {
-    BotChoice.innerHTML = `<button class="bg-orange-400 w-32 h-32 rounded-full grid place-items-center">
+    BotChoice.innerHTML = `<div class="bg-orange-400 w-32 h-32 rounded-full grid place-items-center">
         <span class="bg-white w-28 h-28 rounded-full grid place-items-center">
           <img src="./icons/scissors.png" alt="" />
         </span>
-      </button>`;
+      </div>`;
   }
 
   if (userChoice == botChoice) {
     console.log("Draw");
     outcome.innerHTML = "Draw";
   } else if (userChoice == "paper") {
-    
     if (botChoice == "rock") {
       console.log("win");
       count++;
@@ -107,7 +108,6 @@ function returnWinner(userChoice) {
     }
   }
   showresult();
-
 }
 
 //noble
@@ -127,3 +127,20 @@ scissorBtn.addEventListener("click", () => {
 playAgain.addEventListener("click", () => {
   hideresult();
 });
+
+//rules
+function showrules() {
+  Rules.style.display = "flex";
+}
+
+function hiderules() {
+  Rules.style.display = "none";
+}
+
+rules.addEventListener("click", ()=>{
+  showrules();
+})
+
+Hiderules.addEventListener("click", ()=>{
+  hiderules()
+})
